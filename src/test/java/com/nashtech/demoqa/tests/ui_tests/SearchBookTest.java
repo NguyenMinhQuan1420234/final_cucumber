@@ -1,4 +1,4 @@
-package com.nashtech.demoqa.tests;
+package com.nashtech.demoqa.tests.ui_tests;
 
 import com.nashtech.demoqa.contents.UrlConstants;
 import com.nashtech.demoqa.pages.BookStorePage;
@@ -7,7 +7,6 @@ import com.nashtech.demoqa.pages.ProfilePage;
 import com.nashtech.demoqa.pages.helper.AlertHandling;
 import com.nashtech.demoqa.pages.helper.NavigatePage;
 
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

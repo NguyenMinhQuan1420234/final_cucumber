@@ -1,4 +1,4 @@
-package com.nashtech.demoqa.pages.helper.utils;
+package com.nashtech.demoqa.utils;
 
 import java.io.FileInputStream;
 import java.util.Properties;

@@ -1,4 +1,4 @@
-package com.nashtech.demoqa.tests;
+package com.nashtech.demoqa.tests.ui_tests;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;

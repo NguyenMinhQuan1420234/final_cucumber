@@ -5,7 +5,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 
-import com.nashtech.demoqa.pages.helper.utils.PropertiesFileUtil;
+import com.nashtech.demoqa.utils.PropertiesFileUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;

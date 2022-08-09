@@ -1,4 +1,4 @@
-package com.nashtech.demoqa.tests;
+package com.nashtech.demoqa.tests.ui_tests;
 
 import java.awt.*;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.Properties;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import com.nashtech.demoqa.tests.modals.StudentData;
-import com.nashtech.demoqa.pages.helper.utils.JsonUtil;
+import com.nashtech.demoqa.utils.JsonUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,7 +21,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterMethod;
 
 import com.aventstack.extentreports.testng.listener.ExtentIReporterSuiteListenerAdapter;
-import com.nashtech.demoqa.pages.helper.utils.PropertiesFileUtil;
+import com.nashtech.demoqa.utils.PropertiesFileUtil;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
