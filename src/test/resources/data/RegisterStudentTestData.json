@@ -1,0 +1,16 @@
+{
+  "firstName": "Quan",
+  "lastName": "Nguyen",
+  "email": "nguyenminhquan@gmail.com",
+  "gender": "Male",
+  "mobile": "0505456789",
+  "dateOfBird": "05 Sep 1996",
+  "dateOfBirdFormat": "05 September,1996",
+  "subject": "Maths",
+  "hobby": "Sports",
+  "picture": "C:/Users/banch/final/src/test/resources/data/hinh.jpg",
+  "pictureName": "hinh.jpg",
+  "currentAddress": "No way Home",
+  "state": "NCR",
+  "city": "Delhi"
+}
