@@ -84,10 +84,13 @@ public class RegisterStudentSteps {
         StudentData student = scenarioContext.getContext("studentData", StudentData.class);
 
         assertThat("Verify Message:", registerStudentPage.getVerifyTextValue("Student Name"), equalTo(student.firstName + " " + student.lastName));
+
         if (studentData.email != null)
             assertThat("Verify Message:", registerStudentPage.getVerifyTextValue("Student Email"), equalTo(student.email));
+
         assertThat("Verify Message:", registerStudentPage.getVerifyTextValue("Gender"), equalTo(student.gender));
         assertThat("Verify Message:", registerStudentPage.getVerifyTextValue("Mobile"), equalTo(student.mobile));
+
         if (studentData.dateOfBird != null)
             assertThat("Verify Message:", registerStudentPage.getVerifyTextValue("Date of Birth"), equalTo(student.dateOfBird));
         if (studentData.subject != null)

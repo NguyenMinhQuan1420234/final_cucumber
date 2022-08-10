@@ -35,22 +35,6 @@ public class AccountHelper extends RequestHelper {
         return response;
     }
 
-    public Response generateToken(String userName, String password) {
-        String url = prefixUrl + APIConstant.GENERATE_TOKEN_ENDPOINT;
-        JSONObject body = new JSONObject();
-        body.put("userName", userName);
-        body.put("password", password);
-        Map<String,String> map = new HashMap<>();
-        Headers headers = createHeaders(map);
-        Response response = sendRequest(
-                APIConstant.RequestType.POST,
-                url,
-                headers,
-                body.toString());
-        String token = response.jsonPath().getString("token");
-        return response;
-    }
-
     public String generateTokenString(String userName, String password) {
         String url = prefixUrl + APIConstant.GENERATE_TOKEN_ENDPOINT;
         JSONObject body = new JSONObject();
