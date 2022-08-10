@@ -3,7 +3,7 @@
     <parameter name="browser" value="Chrome"></parameter>
     <test name="test_suite">
         <classes>
-            <class name="com.nashtech.demoqa.tests.ui_tests.RegisterStudentTest"></class>
+            <class name="com.nashtech.demoqa.tests.ui_testng.RegisterStudentTest"></class>
         </classes>
     </test>
 </suite>

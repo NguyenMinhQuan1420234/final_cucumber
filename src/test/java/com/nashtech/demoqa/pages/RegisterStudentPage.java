@@ -1,17 +1,9 @@
 package com.nashtech.demoqa.pages;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-
 import com.nashtech.demoqa.pages.locators.RegisterStudentLocators;
-
-import java.io.IOException;
+import org.openqa.selenium.Keys;
 
 public class RegisterStudentPage extends BasePage {
-
-    public RegisterStudentPage(WebDriver driver) throws IOException {
-        super(driver);
-    }
 
     public void inputFirstName(String text) {
         inputText(RegisterStudentLocators.TXT_FIRSTNAME, text);
@@ -35,24 +27,33 @@ public class RegisterStudentPage extends BasePage {
 
     public void inputDateOfBird(String text) {
         clickElement(RegisterStudentLocators.TXT_DATEOFBIRD);
-        String clickAll = Keys.chord(Keys.CONTROL, "a"); //window
-//        String clickAll = Keys.chord(Keys.COMMAND, "a"); //macos
+        String clickAll = "";
+        if(System.getProperty("os.name").equals("Mac OS X"))
+            clickAll = Keys.chord(Keys.COMMAND, "a"); //macos
+        else
+            clickAll = Keys.chord(Keys.CONTROL, "a"); //window
         inputText(RegisterStudentLocators.TXT_DATEOFBIRD, clickAll);
         inputText(RegisterStudentLocators.TXT_DATEOFBIRD, text);
         sendKeysFromKeyBoard(RegisterStudentLocators.TXT_DATEOFBIRD,Keys.ENTER);
     }
 
     public void inputSubject(String text) {
-        inputText(RegisterStudentLocators.TXT_SUBJECT, text);
-        sendKeysFromKeyBoard(RegisterStudentLocators.TXT_SUBJECT,Keys.ENTER);
+        String[] listOfSubjects = text.split(",");
+        for(String subject: listOfSubjects) {
+            inputText(RegisterStudentLocators.TXT_SUBJECT, subject);
+            sendKeysFromKeyBoard(RegisterStudentLocators.TXT_SUBJECT, Keys.ENTER);
+        }
     }
 
-    public void selectHobbySports() {
-        clickElement(RegisterStudentLocators.CHK_HOBBIES_SPORTS);
+    public void selectHobby(String text) {
+        String[] listOfHobbies = text.split(",");
+        for (String hobby: listOfHobbies)
+            clickElement(RegisterStudentLocators.selectHobby(text));
     }
 
     public void selectPicture(String text){
-        inputText(RegisterStudentLocators.IMG_SELECT, text);
+        String filepath = System.getProperty("user.dir") + "/" + System.getProperty("DATA_PATH") + text;
+        inputText(RegisterStudentLocators.IMG_SELECT, filepath);
     }
 
     public void inputCurrentAddress(String text) {
@@ -61,15 +62,15 @@ public class RegisterStudentPage extends BasePage {
 
     public void selectState(String text) {
         clickElement(RegisterStudentLocators.DDL_STATE);
-        clickElement(RegisterStudentLocators.DDL_STATE_CITY(text));
+        clickElement(RegisterStudentLocators.selectStateCity(text));
     }
 
     public void selectCity(String text) {
         clickElement(RegisterStudentLocators.DDL_CITY);
-        clickElement(RegisterStudentLocators.DDL_STATE_CITY(text));
+        clickElement(RegisterStudentLocators.selectStateCity(text));
     }
 
-    public void ClickSubmitButton() {
+    public void clickSubmitButton() {
         sendKeysFromKeyBoard(RegisterStudentLocators.TXA_CURRENT_ADDRESS, Keys.TAB);
         sendKeysFromKeyBoard(RegisterStudentLocators.TXA_CURRENT_ADDRESS, Keys.TAB);
         // clickElement(StudentRegistrationLocators.BTN_SUBMIT);
@@ -80,6 +81,6 @@ public class RegisterStudentPage extends BasePage {
         return getText(RegisterStudentLocators.MSG_SUCCESS);
     }
     public String getVerifyTextValue(String text) {
-        return getText(RegisterStudentLocators.VERIFY_SUBMIT_VALUE(text));
+        return getText(RegisterStudentLocators.verifySubmitValue(text));
     }
 }

@@ -1,15 +1,9 @@
 package com.nashtech.demoqa.pages;
 
 import com.nashtech.demoqa.pages.locators.AddDeleteSearchBookLocators;
-import org.openqa.selenium.WebDriver;
-
-import java.io.IOException;
 
 public class BookStorePage extends BasePage {
 
-    public BookStorePage(WebDriver driver) throws IOException {
-        super(driver);
-    }
 
     public void clickOnBook(String text) {
         clickElement(AddDeleteSearchBookLocators.SELECT_BOOK_NAME(text));

@@ -19,16 +19,18 @@ public class RegisterStudentLocators {
     public static final By CHK_HOBBIES_READING = By.xpath("//div[@id='hobbiesWrapper']//label[contains(text(),'Reading')]");
     public static final By CHK_HOBBIES_MUSIC = By.xpath("//div[@id='hobbiesWrapper']//label[contains(text(),'Music')]");
     public static final By IMG_SELECT = By.xpath("//input[@id='uploadPicture']"); // sendKeys("image filepath")
-    public static final By DDL_STATE_CITY(String text) {
-        return By.xpath(String.format("//div[@id='stateCity-wrapper']//div[text()='%s']", text));
-    }
     public static final By DDL_STATE = By.xpath("//div[text()='Select State']");
     public static final By DDL_CITY = By.xpath("//div[text()='Select City']");
     public static final By TXA_CURRENT_ADDRESS = By.id("currentAddress");
     public static final By BTN_SUBMIT = By.id("submit");
     public static final By MSG_SUCCESS = By.xpath("//div[@id='example-modal-sizes-title-lg']");
-    public static final By VERIFY_SUBMIT_VALUE(String text) {
+    public static final By verifySubmitValue(String text) {
         return By.xpath(String.format("//tr[td[text()='%s']]/td[2]", text));
     }
-
+    public static final By selectHobby(String text) {
+        return By.xpath(String.format("//div[@id='hobbiesWrapper']//label[contains(text(),'%s')]",text));
+    }
+    public static final By selectStateCity(String text) {
+        return By.xpath(String.format("//div[@id='stateCity-wrapper']//div[text()='%s']", text));
+    }
 }

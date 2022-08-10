@@ -1,28 +1,25 @@
 package com.nashtech.demoqa.pages;
 
-import java.io.IOException;
-import java.time.Duration;
-import java.util.List;
-import java.util.Properties;
-
-import com.nashtech.demoqa.utils.PropertiesFileUtil;
-import org.openqa.selenium.*;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.interactions.Actions;
+
+import java.time.Duration;
+import java.util.List;
+
+import static com.nashtech.demoqa.steps.StepHooks.driver;
 
 
 public class BasePage {
-    public WebDriver driver;
-    public WebDriverWait wait;
+    public WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(System.getProperty("TIMEOUT_IN_SECOND"))));
 
-
-    public BasePage(WebDriver driver) throws IOException {
-        Properties properties = PropertiesFileUtil.loadPropertiesFromFile(System.getProperty("env.properties"));
-        PropertiesFileUtil.appendSystemProperties(properties);
-        this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(System.getProperty("TIMEOUT_IN_SECOND"))));
+    public void navigate(String url) {
+        driver.get(System.getProperty("BASE_URL") + url);
     }
 
     public Select selectElement(By locator) {

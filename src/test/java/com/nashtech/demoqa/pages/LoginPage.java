@@ -2,15 +2,10 @@ package com.nashtech.demoqa.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 
-import java.io.IOException;
+import static com.nashtech.demoqa.steps.StepHooks.driver;
 
 public class LoginPage extends BasePage {
-    public LoginPage(WebDriver driver) throws IOException {
-        super(driver);
-    }
 
     public static final By TXT_USERNAME = By.id("userName");
     public static final By TXT_PASSWORD = By.id("password");

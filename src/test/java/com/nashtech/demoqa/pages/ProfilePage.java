@@ -1,15 +1,8 @@
 package com.nashtech.demoqa.pages;
 
 import com.nashtech.demoqa.pages.locators.AddDeleteSearchBookLocators;
-import org.openqa.selenium.WebDriver;
-
-import java.io.IOException;
 
 public class ProfilePage extends BasePage {
-    public ProfilePage(WebDriver driver) throws IOException {
-        super(driver);
-    }
-
     public boolean checkBookExist(String text) {
         return isDisplayed(AddDeleteSearchBookLocators.SELECT_BOOK_NAME(text));
     }

@@ -1,15 +1,10 @@
-package com.nashtech.demoqa.pages.helper;
+package com.nashtech.demoqa.pages.shared;
 
 import com.nashtech.demoqa.pages.BasePage;
-import org.openqa.selenium.WebDriver;
 
-import java.io.IOException;
+import static com.nashtech.demoqa.steps.StepHooks.driver;
 
-public class AlertHandling extends BasePage {
-
-    public AlertHandling(WebDriver driver) throws IOException {
-        super(driver);
-    }
+public class ModalDialog extends BasePage {
 
     public void dismiss() {
         waitForAlertToBePresent();
