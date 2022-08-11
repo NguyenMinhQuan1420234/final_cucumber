@@ -21,7 +21,7 @@ public class StepHooks {
     }
 
 
-    @Before
+    @Before(order = 0)
     public void beforeScenario() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();

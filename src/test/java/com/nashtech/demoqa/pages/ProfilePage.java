@@ -2,9 +2,11 @@ package com.nashtech.demoqa.pages;
 
 import com.nashtech.demoqa.pages.locators.AddDeleteSearchBookLocators;
 
+import static com.nashtech.demoqa.pages.locators.AddDeleteSearchBookLocators.TXT_SEARCH_BOOK;
+
 public class ProfilePage extends BasePage {
-    public boolean checkBookExist(String text) {
-        return isDisplayed(AddDeleteSearchBookLocators.SELECT_BOOK_NAME(text));
+    public boolean checkBookExist() {
+        return isDisplayed(AddDeleteSearchBookLocators.LBL_BOOKS_IN_COLLECTION);
     }
 
     public void goToBookStore() {
@@ -23,7 +25,10 @@ public class ProfilePage extends BasePage {
     }
 
     public String getBookName(String text) {
-        return getText(AddDeleteSearchBookLocators.SELECT_BOOK_NAME(text));
+        return getText(AddDeleteSearchBookLocators.selectBookByName(text));
+    }
+    public void inputSearchText(String text) {
+        inputText(TXT_SEARCH_BOOK, text);
     }
 
     public String getNoBook() {

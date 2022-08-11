@@ -1,23 +1,36 @@
 package com.nashtech.demoqa.pages;
 
-import com.nashtech.demoqa.pages.locators.AddDeleteSearchBookLocators;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
+import static com.nashtech.demoqa.pages.locators.AddDeleteSearchBookLocators.*;
 
 public class BookStorePage extends BasePage {
 
 
     public void clickOnBook(String text) {
-        clickElement(AddDeleteSearchBookLocators.SELECT_BOOK_NAME(text));
+        clickElement(selectBookByName(text));
     }
 
     public void clickAddButton() {
-        clickElement(AddDeleteSearchBookLocators.BTN_ADD);
+        clickElement(BTN_ADD);
     }
 
     public void inputSearchText(String text) {
-        inputText(AddDeleteSearchBookLocators.TXT_SEARCH_BOOK, text);
+        inputText(TXT_SEARCH_BOOK, text);
     }
 
     public String getBookName(String text) {
-        return getText(AddDeleteSearchBookLocators.SELECT_BOOK_NAME(text));
+
+        return getText(selectBookByName(text));
+    }
+    public String checkBookExist(String expectedBook) {
+        List<WebElement>  books = waitForListOfElementToBeVisible(LBL_BOOKS_IN_COLLECTION);
+        for(WebElement book: books) {
+            if(book.getText().equals(expectedBook))
+                return book.getText();
+        }
+        return null;
     }
 }

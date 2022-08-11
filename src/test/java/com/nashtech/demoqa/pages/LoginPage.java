@@ -15,13 +15,8 @@ public class LoginPage extends BasePage {
     public static final By BTN_LOGIN = By.id("login");
 
     public void Login() {
-        String zoomOut = "document.body.style.zoom='0.75'";
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript(zoomOut);
         inputText(TXT_USERNAME, System.getProperty("USERNAME"));
         inputText(TXT_PASSWORD, System.getProperty("PASSWORD"));
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].click();", driver.findElement(BTN_LOGIN));
         moveToElement(BTN_LOGIN);
         clickElement(BTN_LOGIN);
     }

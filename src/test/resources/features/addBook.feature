@@ -1,8 +1,8 @@
-@Add_Book
+@AddBook
 Feature: Add book to your collection
   As a User, I'd like to add book to my collection
 
-  Scenario Add book to your collection
+  Scenario: Add book to your collection
     Given the user logs into application
     And the user is on Book Store page
     When the user selects a book "Git Pocket Guide"

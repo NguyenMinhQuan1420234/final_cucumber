@@ -16,9 +16,9 @@ public class ModalDialog extends BasePage {
         driver.switchTo().alert().accept();
     }
 
-    public void getText() {
+    public String getText() {
         waitForAlertToBePresent();
-        driver.switchTo().alert().getText();
+        return driver.switchTo().alert().getText();
     }
 
     public void sendKeys(String text) {
