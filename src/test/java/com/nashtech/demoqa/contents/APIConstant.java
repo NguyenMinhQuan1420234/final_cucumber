@@ -10,7 +10,6 @@ public class APIConstant {
     }
 
     public static String DEMOQA_HOST = "https://demoqa.com";
-    public static String PUBLIC_ACCOUNT_USER_ID = "9e52e702-df09-4124-96a1-b99f1087eff9";
     public static String[] PUBLIC_BOOK_ID = {"9781449325862", "9781449331818"};
     public static String NEW_BOOK_ID = "9781593277574";
     public static String DEMOQA_ACCOUNT_PREFIX = "/Account/v1";

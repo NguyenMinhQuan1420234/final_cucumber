@@ -1,6 +1,9 @@
 package com.nashtech.demoqa.pages;
 
+import com.nashtech.demoqa.steps.StepHooks;
+import io.restassured.response.Response;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 
 import static com.nashtech.demoqa.steps.StepHooks.driver;
@@ -22,6 +25,11 @@ public class LoginPage extends BasePage {
         moveToElement(BTN_LOGIN);
         clickElement(BTN_LOGIN);
     }
-
+    public void apiLoginWithDefaultAccount(String username, String userID, Response token) {
+        StepHooks.driver.manage().addCookie(new Cookie("userID", userID));
+        StepHooks.driver.manage().addCookie(new Cookie("userName", username));
+        StepHooks.driver.manage().addCookie(new Cookie("token", token.jsonPath().getString("token")));
+        StepHooks.driver.manage().addCookie(new Cookie("expires", token.jsonPath().getString("expires")));
+    }
 
 }

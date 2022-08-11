@@ -35,7 +35,7 @@ public class AccountHelper extends RequestHelper {
         return response;
     }
 
-    public String generateTokenString(String userName, String password) {
+    public Response generateTokenString(String userName, String password) {
         String url = prefixUrl + APIConstant.GENERATE_TOKEN_ENDPOINT;
         JSONObject body = new JSONObject();
         body.put("userName", userName);
@@ -47,6 +47,6 @@ public class AccountHelper extends RequestHelper {
                 url,
                 headers,
                 body.toString());
-        return response.jsonPath().getString("token");
+        return response;
     }
 }

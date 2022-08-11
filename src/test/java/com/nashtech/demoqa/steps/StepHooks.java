@@ -16,7 +16,6 @@ public class StepHooks {
 
     @BeforeAll
     public static void beforeAll() throws IOException {
-
         Properties properties = PropertiesFileUtil.loadPropertiesFromFile(System.getProperty("env.properties"));
         PropertiesFileUtil.appendSystemProperties(properties);
     }
